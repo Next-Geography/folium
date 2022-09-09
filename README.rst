@@ -31,6 +31,20 @@ Python Data, Leaflet.js Maps
 mapping strengths of the Leaflet.js library. Manipulate your data in Python, 
 then visualize it in a Leaflet map via `folium`.
 
+Windows Build
+------------
+
+.. code:: cmd
+
+    > python setup.py bdist_wheel
+
+
+RPM Build
+.. code:: bash
+
+    $ docker run --rm -t -v %cd%:/project redhat/ubi8:8.6 bash -c "yum install -y rpm-build python3 && cd /project && python3 setup.py bdist_rpm"
+
+
 Installation
 ------------
 

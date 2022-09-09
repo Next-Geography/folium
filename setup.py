@@ -39,6 +39,8 @@ def walk_subpkg(name):
 package_data = {
     '': [
         '*.js',
+        'js/*.js',
+        'css/*.css',
         'plugins/*.js',
         'plugins/*.html',
         'plugins/*.css',

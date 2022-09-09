@@ -3,6 +3,7 @@ Make beautiful, interactive maps with Python and Leaflet.js
 
 """
 
+import os
 import time
 import warnings
 
@@ -22,31 +23,32 @@ from jinja2 import Environment, PackageLoader, Template
 
 ENV = Environment(loader=PackageLoader('folium', 'templates'))
 
+base_path = os.path.abspath(os.path.dirname(__file__))
 
 _default_js = [
     ('leaflet',
-     'https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.js'),
+     "file://" + os.path.join(base_path, "js", "leaflet.js")),
     ('jquery',
-     'https://code.jquery.com/jquery-1.12.4.min.js'),
+     "file://" + os.path.join(base_path, "js", "jquery.min.js")),
     ('bootstrap',
-     'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js'),
+     "file://" + os.path.join(base_path, "js", "bootstrap.min.js")),
     ('awesome_markers',
-     'https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js'),  # noqa
+     "file://" + os.path.join(base_path, "js", "leaflet.awesome-markers.min.js")),
     ]
 
 _default_css = [
     ('leaflet_css',
-     'https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.css'),
+     "file://" + os.path.join(base_path, "css", "leaflet.css")),
     ('bootstrap_css',
-     'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css'),
+     "file://" + os.path.join(base_path, "css", "bootstrap.min.css")),
     ('bootstrap_theme_css',
-     'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css'),  # noqa
+     "file://" + os.path.join(base_path, "css", "bootstrap-theme.min.css")),
     ('awesome_markers_font_css',
-     'https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css'),  # noqa
+     "file://" + os.path.join(base_path, "css", "font-awesome.min.css")),
     ('awesome_markers_css',
-     'https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css'),  # noqa
+     "file://" + os.path.join(base_path, "css", "leaflet.awesome-markers.css")),
     ('awesome_rotate_css',
-     'https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css'),  # noqa
+     "file://" + os.path.join(base_path, "css", "leaflet.awesome-markers.css")),
     ]
 
 
